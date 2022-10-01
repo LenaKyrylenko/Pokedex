@@ -1,0 +1,211 @@
+.App {
+  text-align: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  // display: flex;
+  // margin: 0 auto;
+  // flex-direction: row;
+}
+
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+// }
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.Card {
+  padding: 10px 10px 40px 10px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 2px solid black;
+  margin: 10px;
+  height: 100%;
+  width: 30%;
+  display: inline-block;
+  img {
+    width: 200px;
+    height: 200px;
+    margin: 10px 0px;
+    object-fit: contain;
+    border: 2px solid black;
+  }
+}
+@mixin type {
+  float: left;
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+  flex-wrap: wrap;
+  width: calc(40% - 2px);
+  justify-content: center;
+  font-weight: 500;
+  // background-size: auto;
+}
+div {
+  text-align: center;
+  justify-content: center;
+}
+.type-grass {
+  @include type;
+  border: 2px solid green;
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(25, 193, 25) 50%,
+    green 100%
+  );
+}
+.type-poison {
+  @include type;
+  border: 2px solid blueviolet;
+  background-image: linear-gradient(to bottom, #ffffff 0%, blueviolet 100%);
+}
+.type-fire {
+  @include type;
+  border: 2px solid red;
+  background-image: linear-gradient(to bottom, #ffffff 0%, red 100%);
+}
+.type-electric {
+  @include type;
+  border: 2px solid yellow;
+  background-image: linear-gradient(to bottom, #ffffff 0%, yellow 100%);
+}
+.type-flying {
+  @include type;
+  border: 2px solid cyan;
+  background-image: linear-gradient(to bottom, #ffffff 0%, cyan 100%);
+}
+
+.type-water {
+  @include type;
+  border: 2px solid blue;
+  background-image: linear-gradient(to bottom, #ffffff 0%, blue 100%);
+}
+.type-ice {
+  @include type;
+  border: 2px solid rgb(119, 200, 244);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(119, 200, 244) 100%
+  );
+}
+.type-fighting {
+  @include type;
+  border: 2px solid #e3788e;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e3788e 100%);
+}
+.type-bug {
+  @include type;
+  border: 2px solid greenyellow;
+  background-image: linear-gradient(to bottom, #ffffff 0%, greenyellow 100%);
+}
+.type-normalFairy {
+  @include type;
+  border: 2px solid palevioletred;
+  background-image: linear-gradient(to bottom, #ffffff 0%, palevioletred 100%);
+}
+.type-ground {
+  @include type;
+  border: 2px solid burlywood;
+  background-image: linear-gradient(to bottom, #ffffff 0%, burlywood 100%);
+}
+.type-normal {
+  @include type;
+  border: 2px solid rgb(179, 179, 205);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(179, 179, 205) 100%
+  );
+}
+.type-fairy {
+  @include type;
+  border: 2px solid plum;
+  background-image: linear-gradient(to bottom, #ffffff 0%, plum 100%);
+}
+.type-psychic {
+  @include type;
+  border: 2px solid rgb(243, 170, 68);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(243, 170, 68) 100%
+  );
+}
+.type-rock {
+  @include type;
+  border: 2px solid rgb(84, 78, 71);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(84, 78, 71) 100%
+  );
+}
+.type-ghost {
+  @include type;
+  border: 2px solid rgb(76, 76, 76);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(76, 76, 76) 100%
+  );
+}
+.type-dragon {
+  @include type;
+  border: 2px solid rgb(255, 93, 40);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(255, 93, 40) 100%
+  );
+}
+.type-steel {
+  @include type;
+  border: 2px solid rgb(187, 255, 241);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(187, 255, 241) 100%
+  );
+}
+.type-dark {
+  @include type;
+  border: 2px solid rgb(14, 35, 105);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(14, 35, 105) 100%
+  );
+}
+.btn {
+  width: 95%;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-weight: 500;
+  font-size: large;
+  background-color: #1890ff;
+}
