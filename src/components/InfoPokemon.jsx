@@ -1,10 +1,5 @@
-import { useState } from 'react'
-import { upperCase } from './UpperCase'
-
-function byField(field) {
-  return (a, b) => (a[field]?.name > b[field]?.name ? 1 : -1)
-}
-export const InfoCardPokemon = ({
+import { upperCase,byField } from '../helpers'
+ const InfoCardPokemon = ({
   pokemon: {
     id,
     weight,
@@ -54,3 +49,5 @@ export const InfoCardPokemon = ({
     </div>
   )
 }
+
+export default InfoCardPokemon

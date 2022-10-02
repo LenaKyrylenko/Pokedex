@@ -1,5 +1,5 @@
-import { upperCase } from './UpperCase'
-export const Card = ({ pokemon, getAllInfoPokemon }) => (
+import { upperCase } from '../helpers'
+ const Card = ({ pokemon, getAllInfoPokemon }) => (
   <a onClick={() => getAllInfoPokemon(pokemon)}>
     <div className="Card" key={pokemon?.id}>
       <img
@@ -14,3 +14,4 @@ export const Card = ({ pokemon, getAllInfoPokemon }) => (
     </div>
   </a>
 )
+export default Card
