@@ -1,12 +1,16 @@
-import {upperCase} from './UpperCase'
-export const Card = ({ name, id, image, types }) => (
-    <div className="Card" key={id}>
-      <img src={image} alt={name} />
-      <h2> {upperCase(name)}</h2>
-  
-      {types?.map(({ type }) => (
+import { upperCase } from './UpperCase'
+export const Card = ({ pokemon, getAllInfoPokemon }) => (
+  <a onClick={() => getAllInfoPokemon(pokemon)}>
+    <div className="Card" key={pokemon?.id}>
+      <img
+        src={pokemon?.sprites?.other?.dream_world?.front_default}
+        alt={pokemon?.name}
+      />
+      <h2> {pokemon?.name}</h2>
+
+      {pokemon?.types?.map(({ type }) => (
         <div className={`type-${type?.name}`}>{upperCase(type?.name)}</div>
       ))}
     </div>
-  )
-  
+  </a>
+)
