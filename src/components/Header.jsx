@@ -4,20 +4,15 @@ import { Filter } from './Filter'
 const Header = ({ getFilter, url }) => (
   <>
     <div className="Title">
-      <Row> <Col offset={10}>
-       
-          <h1 className="TitleH1"> Pokedex</h1>
-        </Col>
-      </Row>
-
       <Row>
-        {' '}
-        <Col offset={10}>
-          <Filter getFilter={getFilter} url={url} />
-        </Col>{' '}
-      </Row>
+        <Col span={10}>
+          <p className="TitleH1"> Pokedex</p>
+        </Col>
+      </Row>{' '}
+      <Col>
+        <Filter getFilter={getFilter} url={url} />
+      </Col>
     </div>
-    <Row></Row>
   </>
 )
 export default Header

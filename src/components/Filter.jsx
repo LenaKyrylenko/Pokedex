@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Row, Col, Select } from 'antd'
+import { Row, Col, Select,Divider } from 'antd'
 import { upperCase } from '../helpers'
 
 const { Option } = Select
@@ -39,11 +39,12 @@ export const Filter = ({ url, getFilter }) => {
       <Row>
         <Col>
           <div >
-            <h2>Choose a type of pokemons:</h2>
+          
             <Select
               showSearch
               placeholder="Select a type of pokemon"
               optionFilterProp="children"
+              style={{minWidth:'160px', margin:'10px'}}
               filterOption={(input, option) => option.children.includes(input)}
               filterSort={(optionA, optionB) =>
                 optionA.children
@@ -52,12 +53,14 @@ export const Filter = ({ url, getFilter }) => {
               }
               onChange={onChange}
             >
+              <Option key={"All"} value={"All"}> All </Option>
               {Array.from(load)?.map(({ name }) => (
                 <Option key={name} value={name}>
                   {upperCase(name)}
                 </Option>
               ))}
-            </Select>
+              </Select>
+            
           </div>
         </Col>
       </Row>

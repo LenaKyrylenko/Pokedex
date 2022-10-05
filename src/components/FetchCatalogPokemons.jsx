@@ -15,9 +15,7 @@ const FetchCatalogPokemons = ({ url }) => {
   const [filter, setFilter] = useState('')
   const [arrFilter, setPokFilter] = useState([])
 
-  const getFilter=(value) => 
-    setFilter(value)
-  
+  const getFilter = (value) => setFilter(value)
 
   const getAllPokemons = async () => {
     const data = await fetch(load, {
@@ -83,14 +81,12 @@ const FetchCatalogPokemons = ({ url }) => {
     )
     return () => setPokFilter([])
   }, [filter])
+
   function getAllInfoPokemon(pokemon) {
     setOpen(true)
     return setStateInfo(pokemon)
   }
 
-  console.log('my filter', filter)
-
-  console.log('error', error)
   if (error) return <div>Oops, an error occurred {error}</div>
   else if (!isLoaded) {
     return <div>Loading...</div>
@@ -98,47 +94,69 @@ const FetchCatalogPokemons = ({ url }) => {
     return (
       <>
         {' '}
-  
         <Header
-       getFilter={getFilter}
-            url={'https://pokeapi.co/api/v2/type?limit=99'}
-          />
-      
+          getFilter={getFilter}
+          url={'https://pokeapi.co/api/v2/type?limit=99'}
+        />
         <Row>
-          <Col span={14} className="gutter-row">
+          <Col
+            xl={{ span: 16 }}
+            md={{ span: 14 }}
+            sm={{ span: 16 }}
+            xs={{ span: 16 }}
+            className="gutter-row"
+          >
             <div className="App">
-              {filter
-                ?
-                arrFilter?.length == 0
-                  ?
-                  (<h2> Sorry, no Pokémon of this type have been found yet.
-                    we will add soon, but for now choose another!</h2>) :
-                arrFilter?.map((pokemon) => (
+              {filter ? (
+                filter == 'All' ? (
+                  allPokemons?.map((pokemon) => (
                     <Card
                       pokemon={pokemon}
                       getAllInfoPokemon={getAllInfoPokemon}
                     />
                   ))
-                : allPokemons?.map((pokemon) => (
+                ) : arrFilter?.length == 0 ? (
+                  <h2>
+                    {' '}
+                    Please, click "Load More" to load a batch of pokemons
+                  </h2>
+                ) : (
+                  arrFilter?.map((pokemon) => (
                     <Card
                       pokemon={pokemon}
                       getAllInfoPokemon={getAllInfoPokemon}
                     />
-                  ))}
+                  ))
+                )
+              ) : (
+                allPokemons?.map((pokemon) => (
+                  <Card
+                    pokemon={pokemon}
+                    getAllInfoPokemon={getAllInfoPokemon}
+                  />
+                ))
+              )}
 
               {console.log('my filtered arr ', arrFilter)}
-              {console.log('arrat all pokemons ', allPokemons)}
+              {console.log('arr all pokemons ', allPokemons)}
 
               <div>
                 <button className="btn" onClick={() => getAllPokemons()}>
                   {' '}
-                  Load more{' '}
+                  Load More{' '}
                 </button>
               </div>
             </div>
           </Col>
 
-          <Col span={10}>{open && <InfoCardPokemon pokemon={stateInfo} />}</Col>
+          <Col
+            xl={{ span: 8 }}
+            md={{ span: 10 }}
+            sm={{ span: 8 }}
+            xs={{ span: 8 }}
+          >
+            {open && <InfoCardPokemon pokemon={stateInfo} />}
+          </Col>
         </Row>
       </>
     )

@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   display: -webkit-flex;
@@ -5,15 +6,8 @@
   display: -ms-flex;
   display: -o-flex;
   margin-top: 70px;
-  // display: flex;
-  // margin: 0 auto;
-  // flex-direction: row;
+  margin-left: 20px;
 }
-
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -37,62 +31,134 @@
   position: fixed;
   padding: 10px;
   display: flex;
+  flex-direction: row;
   // padding: 20px;
   float: left;
   z-index: 4;
   width: 100%;
-  top:0;
+  // top:0;
   left:0;
   // top: 0;
   background-color: white;
 }
+
+.sticky-col {
+  position: -webkit-sticky;
+  position: sticky;
+  // visibility:visible;
+
+  background-color: white !important;
+}
+
+.first-col {
+  width: 250px;
+  min-width: 200px;
+  max-width: 100px;
+  left: 0px;
+}
+
+.second-col {
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+  left: 100px;
+}
 .Card {
   float: left;
-  padding: 10px 10px 40px 10px;
+  cursor: pointer;
+  padding: 30px 0px 40px 0px;
   text-align: center;
   box-sizing: border-box;
   border: 2px solid black;
   margin: 10px;
-  height: 100%;
+  // height: 100%;
   width: 30%;
   display: inline-block;
+  .TitleCard{
+    font-size: 24px;
+    font-weight: 500;
+  }
   img {
-    width: 200px;
-    height: 200px;
-    margin: 10px 0px;
+    width: 220px;
+    height: 220px;
+    // margin: 10px 0px;
+    // padding: 10px;
     object-fit: contain;
-    border: 2px solid black;
+    border: 1px solid black;
   }
 }
 .CardPokemon {
   position: fixed;
   // width: 400px;
   // height: 400px;
-  padding: 20px;
+  margin-top: 80px;
+  margin-left:20px ;
+  padding:15px 10px;
+margin-bottom: 10px;
   border: 2px solid black;
+  .TitleCardPokemon{
+    font-size: 16px;
+    font-weight: 500;
+  }
   img {
-    width: 200px;
+    width: 250px;
     height: 200px;
     margin: 10px 0px;
     object-fit: contain;
-    border: 2px solid black;
+    border: 1px solid black;
   }
 }
+
 .Title {
   position: fixed;
-  padding: 10px;
-  display: flex;
+  // display: flex;
+  // flex-direction: row;
   // padding: 20px;
   z-index: 4;
   width: 100%;
   top: 0;
+  padding:10px;
+
   background-color: white;
-  right: 0;
 }
 .TitleH1 {
-
+font-size:40px;
   border: 2px solid black;
+  padding: 0;
+  margin: 5px;
+  font-weight:500;
 
+}
+
+div {
+  text-align: center;
+  justify-content: center;
+}
+/* 992px - 1300px */
+@mixin _1300 {
+  @media (max-width: 1300px){
+    margin: 0 5px;
+    width: calc(40%);
+    font-size: 14px;
+
+  }
+}
+@mixin _900 {
+  @media (max-width: 900px){
+    margin: 0 5px;
+    width: calc(40%);
+    font-size: 12px;
+  }
+}
+@mixin _768 {
+  @media (max-width: 768px){
+    // margin: 5px;
+
+    width: calc(40%);
+    font-size: 10px;
+
+    // font-size: 10px;
+  }
 }
 @mixin type {
   float: left;
@@ -101,53 +167,87 @@
   border-radius: 5px;
   margin: 0 10px;
   flex-wrap: wrap;
-  width: calc(40% - 2px);
+  width: calc(40%);
   justify-content: center;
   font-weight: 500;
   color: black;
 }
-div {
-  text-align: center;
-  justify-content: center;
-}
 .type-grass {
   @include type;
-  border: 2px solid green;
+  @include _1300;
+  @include _900;
+  @include _768;
+
+
+  border: 2px solid 	#228B22;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0%,
-    rgb(25, 193, 25) 50%,
-    green 100%
+   
+    #228B22 100%
   );
 }
 .type-poison {
   @include type;
-  border: 2px solid blueviolet;
-  background-image: linear-gradient(to bottom, #ffffff 0%, blueviolet 100%);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#8B008B;
+  background-image: linear-gradient(to bottom, #ffffff 0%, 	#8B008B 100%);
 }
 .type-fire {
   @include type;
-  border: 2px solid red;
-  background-image: linear-gradient(to bottom, #ffffff 0%, red 100%);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid#FF4500;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #FF4500 100%);
 }
 .type-electric {
   @include type;
+  @include _1300;
+  @include _900;
+  @include _768;
+
   border: 2px solid yellow;
   background-image: linear-gradient(to bottom, #ffffff 0%, yellow 100%);
 }
 .type-flying {
   @include type;
+  @include _1300;
+  @include _900;
+  @include _768;
+
   border: 2px solid cyan;
   background-image: linear-gradient(to bottom, #ffffff 0%, cyan 100%);
 }
+.type-unknown {
+  @include type;
+  @include _1300;
+  @include _900;
+  @include _768;
 
+  border: 2px solid rgb(150, 48, 106);
+  background-image: linear-gradient(to bottom, #ffffff 0%,  rgb(150, 48, 106) 100%);
+}
 .type-water {
   @include type;
-  border: 2px solid blue;
-  background-image: linear-gradient(to bottom, #ffffff 0%, blue 100%);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid #3498DB ;
+  background-image: linear-gradient(to bottom,
+   #ffffff 0%,#3498DB  100%);
 }
 .type-ice {
   @include type;
+  @include _1300;
+  @include _900;
+  @include _768;
+
   border: 2px solid rgb(119, 200, 244);
   background-image: linear-gradient(
     to bottom,
@@ -157,26 +257,46 @@ div {
 }
 .type-fighting {
   @include type;
-  border: 2px solid #e3788e;
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e3788e 100%);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid #FF6347;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #FF6347 100%);
 }
 .type-bug {
   @include type;
-  border: 2px solid greenyellow;
-  background-image: linear-gradient(to bottom, #ffffff 0%, greenyellow 100%);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#98FB98;
+  background-image: linear-gradient(to bottom, #ffffff 0%, 	#98FB98 100%);
 }
-.type-normalFairy {
+.type-shadow {
   @include type;
-  border: 2px solid palevioletred;
-  background-image: linear-gradient(to bottom, #ffffff 0%, palevioletred 100%);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#B0C4DE;
+  background-image: linear-gradient(to bottom, #ffffff 0%, 	#B0C4DE 100%);
 }
 .type-ground {
+  @include _1300;
   @include type;
-  border: 2px solid burlywood;
-  background-image: linear-gradient(to bottom, #ffffff 0%, burlywood 100%);
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#D2691E;
+  background-image: linear-gradient(to bottom, #ffffff 0%, 		#D2691E 100%);
 }
 .type-normal {
   @include type;
+  @include _1300;
+  @include _900;
+  @include _768;
+
   border: 2px solid rgb(179, 179, 205);
   background-image: linear-gradient(
     to bottom,
@@ -186,71 +306,103 @@ div {
 }
 .type-fairy {
   @include type;
-  border: 2px solid plum;
-  background-image: linear-gradient(to bottom, #ffffff 0%, plum 100%);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#FF00FF;
+  background-image: linear-gradient(to bottom, #ffffff 0%, 	#FF00FF 100%);
 }
 .type-psychic {
   @include type;
-  border: 2px solid rgb(243, 170, 68);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#800080;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0%,
-    rgb(243, 170, 68) 100%
+    #800080 100%
   );
 }
 .type-rock {
   @include type;
-  border: 2px solid rgb(84, 78, 71);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#696969;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0%,
-    rgb(84, 78, 71) 100%
+    #696969 100%
   );
 }
 .type-ghost {
   @include type;
-  border: 2px solid rgb(76, 76, 76);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#C0C0C0;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0%,
-    rgb(76, 76, 76) 100%
+    #C0C0C0 100%
   );
 }
 .type-dragon {
   @include type;
-  border: 2px solid rgb(255, 93, 40);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#DC143C;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0%,
-    rgb(255, 93, 40) 100%
+    #DC143C 100%
   );
 }
 .type-steel {
   @include type;
-  border: 2px solid rgb(187, 255, 241);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid #008B8B;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0%,
-    rgb(187, 255, 241) 100%
+    #008B8B 100%
   );
 }
 .type-dark {
   @include type;
-  border: 2px solid rgb(14, 35, 105);
+  @include _1300;
+  @include _900;
+  @include _768;
+
+  border: 2px solid 	#696969;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0%,
-    rgb(14, 35, 105) 100%
+    #696969 100%
   );
 }
 
-td,
-th,
-tr,
-td {
-  border: 1px solid black;
-  text-align: center; /* Выравнивание по центру */
-  // padding: 3px; /* Поля вокруг текста */
+// td,tr{
+//   border: 1px solid black;
+//   text-align: center; /* Выравнивание по центру */
+//   // padding: 3px; /* Поля вокруг текста */
+// }
+table, tr, td {
+  border: 1px solid;
+}
+table{
+  margin: 0px 15px ;
+  width: 200px;
 }
 col:first-child {
   width: 70%;
@@ -262,11 +414,154 @@ col:last-child {
 .btn {
   width: 95%;
   margin: 20px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   color: white;
   font-weight: 500;
-  font-size: large;
+  font-size: 20px;
   background-color: #1890ff;
+  margin-left: 0px;
+  margin-right: 40px;
+
+}
+
+
+
+
+@media screen and (max-width: 1300px) {
+  .Card {
+   
+    width: 30%;
+    padding: 20px 0px 25px 0px;
+  
+    img {
+      width: 170px;
+      height: 170px;
+    
+    }
+  }
+
+  .CardPokemon {
+    position: fixed;
+    // width: 400px;
+    // height: 400px;
+    margin-top: 0px;
+    margin-left:10px ;
+    padding:15px 10px;
+  margin-bottom: 10px;
+   top: 160px;
+    padding: 20px;
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .Card {
+   
+    width: 28%;
+    padding: 5px 5px 25px 5px;
+  
+    img {
+      width: 120px;
+      height: 120px;
+    
+    }
+  }
+  .first-col {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    left: 0px;
+  }
+  
+  .second-col {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    left: 100px;
+  }
+
+  .CardPokemon {
+    position: fixed;
+    // width: 400px;
+    // height: 400px;
+   top: 150px;
+    padding: 20px;
+    img {
+      width: 180px;
+      height: 150px;
+    }
+  }
+}
+  @media screen and (max-width: 900px) {
+    .Card {
+     
+      width: 28%;
+  padding: 5px 5px 20px 5px;
+    
+      img {
+        width: 100px;
+        height: 100px;
+      
+      }
+      .TitleCard{
+        font-size: 16px;
+      }
+
+    }
+    .first-col {
+      width: 100px;
+      min-width: 80px;
+      max-width: 80px;
+     
+    }
+    
+    .second-col {
+      width: 50px;
+      min-width: 50px;
+      max-width: 50px;
+      left: 100px;
+    }
+    .CardPokemon {
+      position: fixed;
+      // width: 400px;
+      // height: 400px;
+     top: 200px;
+  padding:15px;
+
+      // padding: 20px;
+      img {
+        width: 180px;
+        height: 150px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+  .Card{
+  padding: 20px 0px 20px 0px;
+  img {
+    width: 80px;
+    height: 80px;
+  
+  }
+  }
+    table{
+    width: 100px;
+    margin: 5px;
+  }
+  .CardPokemon {
+    position: fixed;
+    // width: 400px;
+    // height: 400px;
+   top: 150px;
+    padding: 5px;
+    img {
+      width: 130px;
+      height: 130px;
+    }
+  }
 }

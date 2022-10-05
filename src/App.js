@@ -8,8 +8,6 @@ function App() {
   return (
 
     <> 
-
-
       <div className="App">
         <FetchCatalogPokemons url={'https://pokeapi.co/api/v2/pokemon/'} />
       </div>

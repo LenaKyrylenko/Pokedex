@@ -1,5 +1,5 @@
-import { upperCase,byField } from '../helpers'
- const InfoCardPokemon = ({
+import { upperCase, byField } from '../helpers'
+const InfoCardPokemon = ({
   pokemon: {
     id,
     weight,
@@ -17,15 +17,15 @@ import { upperCase,byField } from '../helpers'
   return (
     <div className="CardPokemon" key={id}>
       <img src={front_default} alt={name} />
-      <h2>
+      <p className='TitleCardPokemon'>
         {upperCase(name)} #{((id / 1000) % 1).toString().split('.')[1]}
-      </h2>
+      </p>
       <table>
         <tr>
-          <td style={{ width: '60%' }}>Type</td>
-          <td>
+          <td class="sticky-col first-col">Type</td>
+          <td class="sticky-col second-col">
             {types?.map(({ type }) => (
-              <p style={{ padding: '0', margin: '0' }}>
+              <p style={{padding:'0',margin:'0'}}>
                 {upperCase(type?.name)}{' '}
               </p>
             ))}
@@ -38,11 +38,11 @@ import { upperCase,byField } from '../helpers'
           </tr>
         ))}
         <tr>
-          <td>Weight</td>
+          <td >Weight</td>
           <td> {weight}</td>
         </tr>
         <tr>
-          <td>Total moves</td>
+          <td >Total moves</td>
           <td>{moves?.length}</td>
         </tr>
       </table>
