@@ -30,8 +30,6 @@ export const Filter = ({ url, getFilter }) => {
   useEffect(() => {
     getTypesOfPokemons()
   }, [])
-
-  console.log('types ', load)
   const onChange = (value) => getFilter(value)
 
   return (

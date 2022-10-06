@@ -2,7 +2,6 @@ import InfoCardPokemon from './InfoPokemon'
 import { useEffect, useState } from 'react'
 import { Col, Row } from 'antd'
 import Card from './Card'
-import { Filter } from './Filter'
 import React from 'react'
 import Header from './Header'
 const FetchCatalogPokemons = ({ url }) => {
@@ -12,8 +11,8 @@ const FetchCatalogPokemons = ({ url }) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [stateInfo, setStateInfo] = useState()
   const [open, setOpen] = useState(false)
-  const [filter, setFilter] = useState('')
-  const [arrFilter, setPokFilter] = useState([])
+  const [filter, setFilter] = useState('All')
+  const [arrFilter, setPokemonsFilter] = useState([])
 
   const getFilter = (value) => setFilter(value)
 
@@ -27,7 +26,6 @@ const FetchCatalogPokemons = ({ url }) => {
 
     if (data) {
       const result = await data.json()
-      console.log('result', result)
       setLoad(result.next)
       setIsLoaded(true)
 
@@ -56,7 +54,7 @@ const FetchCatalogPokemons = ({ url }) => {
             data?.types?.filter(
               ({ type: { name } }) =>
                 name.includes(filter) &&
-                setPokFilter((currentList) => [...currentList, data]),
+                setPokemonsFilter((currentList) => [...currentList, data]),
             )
           }
         } else {
@@ -76,10 +74,10 @@ const FetchCatalogPokemons = ({ url }) => {
       pokemon?.types?.map(
         ({ type: { name } }) =>
           name.includes(filter) &&
-          setPokFilter((currentList) => [...currentList, pokemon]),
+          setPokemonsFilter((currentList) => [...currentList, pokemon]),
       ),
     )
-    return () => setPokFilter([])
+    return () => setPokemonsFilter([])
   }, [filter])
 
   function getAllInfoPokemon(pokemon) {
@@ -103,7 +101,7 @@ const FetchCatalogPokemons = ({ url }) => {
             xl={{ span: 16 }}
             md={{ span: 14 }}
             sm={{ span: 16 }}
-            xs={{ span: 16 }}
+            xs={{ span: 12 }}
             className="gutter-row"
           >
             <div className="App">
@@ -116,10 +114,10 @@ const FetchCatalogPokemons = ({ url }) => {
                     />
                   ))
                 ) : arrFilter?.length == 0 ? (
-                  <h2>
+                  <p className="TextMore">
                     {' '}
                     Please, click "Load More" to load a batch of pokemons
-                  </h2>
+                  </p>
                 ) : (
                   arrFilter?.map((pokemon) => (
                     <Card
@@ -136,10 +134,6 @@ const FetchCatalogPokemons = ({ url }) => {
                   />
                 ))
               )}
-
-              {console.log('my filtered arr ', arrFilter)}
-              {console.log('arr all pokemons ', allPokemons)}
-
               <div>
                 <button className="btn" onClick={() => getAllPokemons()}>
                   {' '}
@@ -153,7 +147,7 @@ const FetchCatalogPokemons = ({ url }) => {
             xl={{ span: 8 }}
             md={{ span: 10 }}
             sm={{ span: 8 }}
-            xs={{ span: 8 }}
+            xs={{ span: 12 }}
           >
             {open && <InfoCardPokemon pokemon={stateInfo} />}
           </Col>

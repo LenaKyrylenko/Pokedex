@@ -17,7 +17,7 @@ const InfoCardPokemon = ({
   return (
     <div className="CardPokemon" key={id}>
       <img src={front_default} alt={name} />
-      <p className='TitleCardPokemon'>
+      <p className="TitleCardPokemon">
         {upperCase(name)} #{((id / 1000) % 1).toString().split('.')[1]}
       </p>
       <table>
@@ -25,7 +25,7 @@ const InfoCardPokemon = ({
           <td class="sticky-col first-col">Type</td>
           <td class="sticky-col second-col">
             {types?.map(({ type }) => (
-              <p style={{padding:'0',margin:'0'}}>
+              <p style={{ padding: '0', margin: '0' }}>
                 {upperCase(type?.name)}{' '}
               </p>
             ))}
@@ -38,11 +38,11 @@ const InfoCardPokemon = ({
           </tr>
         ))}
         <tr>
-          <td >Weight</td>
+          <td>Weight</td>
           <td> {weight}</td>
         </tr>
         <tr>
-          <td >Total moves</td>
+          <td>Total moves</td>
           <td>{moves?.length}</td>
         </tr>
       </table>

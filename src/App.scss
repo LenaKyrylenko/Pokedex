@@ -1,11 +1,10 @@
-
 .App {
   text-align: center;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
-  margin-top: 70px;
+  margin-top: 75px;
   margin-left: 20px;
 }
 
@@ -32,21 +31,16 @@
   padding: 10px;
   display: flex;
   flex-direction: row;
-  // padding: 20px;
   float: left;
   z-index: 4;
   width: 100%;
-  // top:0;
-  left:0;
-  // top: 0;
+  left: 0;
   background-color: white;
 }
 
 .sticky-col {
   position: -webkit-sticky;
   position: sticky;
-  // visibility:visible;
-
   background-color: white !important;
 }
 
@@ -71,32 +65,27 @@
   box-sizing: border-box;
   border: 2px solid black;
   margin: 10px;
-  // height: 100%;
   width: 30%;
   display: inline-block;
-  .TitleCard{
+  .TitleCard {
     font-size: 24px;
     font-weight: 500;
   }
   img {
     width: 220px;
     height: 220px;
-    // margin: 10px 0px;
-    // padding: 10px;
     object-fit: contain;
     border: 1px solid black;
   }
 }
 .CardPokemon {
   position: fixed;
-  // width: 400px;
-  // height: 400px;
   margin-top: 80px;
-  margin-left:20px ;
-  padding:15px 10px;
-margin-bottom: 10px;
+  margin-left: 20px;
+  padding: 15px 10px;
+  margin-bottom: 10px;
   border: 2px solid black;
-  .TitleCardPokemon{
+  .TitleCardPokemon {
     font-size: 16px;
     font-weight: 500;
   }
@@ -111,23 +100,18 @@ margin-bottom: 10px;
 
 .Title {
   position: fixed;
-  // display: flex;
-  // flex-direction: row;
-  // padding: 20px;
   z-index: 4;
   width: 100%;
   top: 0;
-  padding:10px;
-
+  padding: 10px;
   background-color: white;
 }
 .TitleH1 {
-font-size:40px;
+  font-size: 40px;
   border: 2px solid black;
   padding: 0;
   margin: 5px;
-  font-weight:500;
-
+  font-weight: 500;
 }
 
 div {
@@ -136,28 +120,41 @@ div {
 }
 /* 992px - 1300px */
 @mixin _1300 {
-  @media (max-width: 1300px){
+  @media (max-width: 1300px) {
     margin: 0 5px;
     width: calc(40%);
     font-size: 14px;
-
   }
 }
 @mixin _900 {
-  @media (max-width: 900px){
+  @media (max-width: 900px) {
     margin: 0 5px;
     width: calc(40%);
     font-size: 12px;
   }
 }
 @mixin _768 {
-  @media (max-width: 768px){
-    // margin: 5px;
-
+  @media (max-width: 768px) {
     width: calc(40%);
     font-size: 10px;
-
-    // font-size: 10px;
+  }
+}
+@mixin _620 {
+  @media (max-width: 620px) {
+    width: calc(30%);
+    font-size: 8px;
+  }
+}
+@mixin _420 {
+  @media (max-width: 420px) {
+    width: calc(42%);
+    font-size: 12px;
+  }
+}
+@mixin _350 {
+  @media (max-width: 350px) {
+    width: calc(38%);
+    font-size: 10px;
   }
 }
 @mixin type {
@@ -177,39 +174,45 @@ div {
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-
-  border: 2px solid 	#228B22;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-   
-    #228B22 100%
-  );
+  border: 2px solid #228b22;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #228b22 100%);
 }
 .type-poison {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#8B008B;
-  background-image: linear-gradient(to bottom, #ffffff 0%, 	#8B008B 100%);
+  border: 2px solid #8b008b;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #8b008b 100%);
 }
 .type-fire {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
   border: 2px solid#FF4500;
-  background-image: linear-gradient(to bottom, #ffffff 0%, #FF4500 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #ff4500 100%);
 }
 .type-electric {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
   border: 2px solid yellow;
   background-image: linear-gradient(to bottom, #ffffff 0%, yellow 100%);
@@ -219,6 +222,9 @@ div {
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
   border: 2px solid cyan;
   background-image: linear-gradient(to bottom, #ffffff 0%, cyan 100%);
@@ -228,25 +234,37 @@ div {
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
   border: 2px solid rgb(150, 48, 106);
-  background-image: linear-gradient(to bottom, #ffffff 0%,  rgb(150, 48, 106) 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    rgb(150, 48, 106) 100%
+  );
 }
 .type-water {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid #3498DB ;
-  background-image: linear-gradient(to bottom,
-   #ffffff 0%,#3498DB  100%);
+  border: 2px solid #3498db;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #3498db 100%);
 }
 .type-ice {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
   border: 2px solid rgb(119, 200, 244);
   background-image: linear-gradient(
@@ -260,42 +278,57 @@ div {
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid #FF6347;
-  background-image: linear-gradient(to bottom, #ffffff 0%, #FF6347 100%);
+  border: 2px solid #ff6347;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #ff6347 100%);
 }
 .type-bug {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#98FB98;
-  background-image: linear-gradient(to bottom, #ffffff 0%, 	#98FB98 100%);
+  border: 2px solid #98fb98;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #98fb98 100%);
 }
 .type-shadow {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#B0C4DE;
-  background-image: linear-gradient(to bottom, #ffffff 0%, 	#B0C4DE 100%);
+  border: 2px solid #b0c4de;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #b0c4de 100%);
 }
 .type-ground {
   @include _1300;
   @include type;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#D2691E;
-  background-image: linear-gradient(to bottom, #ffffff 0%, 		#D2691E 100%);
+  border: 2px solid #d2691e;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #d2691e 100%);
 }
 .type-normal {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
   border: 2px solid rgb(179, 179, 205);
   background-image: linear-gradient(
@@ -309,99 +342,92 @@ div {
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#FF00FF;
-  background-image: linear-gradient(to bottom, #ffffff 0%, 	#FF00FF 100%);
+  border: 2px solid #ff00ff;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #ff00ff 100%);
 }
 .type-psychic {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#800080;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #800080 100%
-  );
+  border: 2px solid #800080;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #800080 100%);
 }
 .type-rock {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#696969;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #696969 100%
-  );
+  border: 2px solid #696969;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #696969 100%);
 }
 .type-ghost {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#C0C0C0;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #C0C0C0 100%
-  );
+  border: 2px solid #c0c0c0;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #c0c0c0 100%);
 }
 .type-dragon {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#DC143C;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #DC143C 100%
-  );
+  border: 2px solid #dc143c;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #dc143c 100%);
 }
 .type-steel {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid #008B8B;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #008B8B 100%
-  );
+  border: 2px solid #008b8b;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #008b8b 100%);
 }
 .type-dark {
   @include type;
   @include _1300;
   @include _900;
   @include _768;
+  @include _620;
+  @include _420;
+  @include _350;
 
-  border: 2px solid 	#696969;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #696969 100%
-  );
+  border: 2px solid #696969;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #696969 100%);
 }
-
-// td,tr{
-//   border: 1px solid black;
-//   text-align: center; /* Выравнивание по центру */
-//   // padding: 3px; /* Поля вокруг текста */
-// }
-table, tr, td {
+table,
+tr,
+td {
   border: 1px solid;
 }
-table{
-  margin: 0px 15px ;
+table {
+  margin: 0px 15px;
   width: 200px;
 }
 col:first-child {
@@ -423,34 +449,28 @@ col:last-child {
   background-color: #1890ff;
   margin-left: 0px;
   margin-right: 40px;
-
 }
-
-
-
-
+.TextMore {
+  font-size: 24px;
+  font-weight: 500;
+}
 @media screen and (max-width: 1300px) {
   .Card {
-   
     width: 30%;
     padding: 20px 0px 25px 0px;
-  
+
     img {
       width: 170px;
       height: 170px;
-    
     }
   }
 
   .CardPokemon {
-    position: fixed;
-    // width: 400px;
-    // height: 400px;
     margin-top: 0px;
-    margin-left:10px ;
-    padding:15px 10px;
-  margin-bottom: 10px;
-   top: 160px;
+    margin-left: 10px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    top: 160px;
     padding: 20px;
     img {
       width: 250px;
@@ -460,35 +480,28 @@ col:last-child {
 }
 @media screen and (max-width: 1100px) {
   .Card {
-   
     width: 28%;
-    padding: 5px 5px 25px 5px;
-  
+    padding: 10px 5px 25px 5px;
+
     img {
       width: 120px;
       height: 120px;
-    
     }
   }
   .first-col {
     width: 150px;
     min-width: 150px;
     max-width: 150px;
-    left: 0px;
   }
-  
+
   .second-col {
     width: 50px;
     min-width: 50px;
     max-width: 50px;
-    left: 100px;
   }
 
   .CardPokemon {
-    position: fixed;
-    // width: 400px;
-    // height: 400px;
-   top: 150px;
+    top: 150px;
     padding: 20px;
     img {
       width: 180px;
@@ -496,72 +509,177 @@ col:last-child {
     }
   }
 }
-  @media screen and (max-width: 900px) {
-    .Card {
-     
-      width: 28%;
-  padding: 5px 5px 20px 5px;
-    
-      img {
-        width: 100px;
-        height: 100px;
-      
-      }
-      .TitleCard{
-        font-size: 16px;
-      }
+@media screen and (max-width: 900px) {
+  .Card {
+    width: 28%;
+    padding: 10px 5px 20px 5px;
 
-    }
-    .first-col {
+    img {
       width: 100px;
-      min-width: 80px;
-      max-width: 80px;
-     
+      height: 100px;
     }
-    
-    .second-col {
-      width: 50px;
-      min-width: 50px;
-      max-width: 50px;
-      left: 100px;
+    .TitleCard {
+      font-size: 16px;
     }
-    .CardPokemon {
-      position: fixed;
-      // width: 400px;
-      // height: 400px;
-     top: 200px;
-  padding:15px;
-
-      // padding: 20px;
-      img {
-        width: 180px;
-        height: 150px;
-      }
-    }
+  }
+  .first-col {
+    width: 100px;
+    min-width: 80px;
+    max-width: 100px;
   }
 
-  @media screen and (max-width: 768px) {
-  .Card{
-  padding: 20px 0px 20px 0px;
-  img {
-    width: 80px;
-    height: 80px;
-  
+  .second-col {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
   }
+  .CardPokemon {
+    top: 200px;
+    padding: 15px;
+    img {
+      width: 180px;
+      height: 150px;
+    }
   }
-    table{
+}
+
+@media screen and (max-width: 768px) {
+  .Card {
+    padding: 20px 0px 20px 0px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  table {
     width: 100px;
     margin: 5px;
   }
   .CardPokemon {
-    position: fixed;
-    // width: 400px;
-    // height: 400px;
-   top: 150px;
+    top: 150px;
     padding: 5px;
     img {
       width: 130px;
       height: 130px;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Card {
+    padding: 20px 0px 20px 0px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  table {
+    width: 100px;
+    margin: 5px;
+  }
+  .CardPokemon {
+    top: 150px;
+    padding: 5px;
+    img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .Card {
+    padding: 10px 0px 10px 0px;
+    margin: 5px;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .TextMore {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  table {
+    width: 100px;
+    margin: 5px;
+  }
+  .CardPokemon {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .Card {
+    padding: 10px 0px 10px 0px;
+    margin: 5px;
+    width: 40%;
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .CardPokemon {
+    margin-left: 0px;
+  }
+  .btn {
+    width: 90%;
+
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .Card {
+    padding: 15px 0px 30px 0px;
+    margin: 0 0 10px;
+    width: 90%;
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .CardPokemon {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .Title {
+    padding: 0px;
+  }
+  .TitleH1 {
+    font-size: 30px;
+    padding: 10px 20px;
+  }
+  .App {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .Card {
+    padding: 15px 0px 20px 0px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .CardPokemon {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .TitleCardPokemon {
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+  table {
+    width: 80px;
+  }
+  .first-col {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
   }
 }

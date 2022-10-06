@@ -5,7 +5,9 @@ const Header = ({ getFilter, url }) => (
   <>
     <div className="Title">
       <Row>
-        <Col span={10}>
+        <Col span={10}
+        xs={{span:15}}
+        >
           <p className="TitleH1"> Pokedex</p>
         </Col>
       </Row>{' '}
