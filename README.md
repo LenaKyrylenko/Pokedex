@@ -1,10 +1,14 @@
 # Pokedex
 
-A Pokemon catalogue, built with React, Ant Design and PokeAPI.\
+A Pokemon catalogue, built with React, Ant Design and PokeAPI.
 
-On click on card pokemon on right all information about this pokemon will be visible.\
-The website with adaptive styling and the presence of a filter visible pokemon by type.\
-On click of ‘Load More’, more Pokémon are loaded and displayed on the page.\
+On click on card pokemon on right all information about this pokemon will be visible.
+The website with adaptive styling and the presence of a filter visible pokemon by type.
+On click of ‘Load More’, more Pokémon are loaded and displayed on the page.
+
+# Deploy
+
+[GitHub Pages] https://lenakyrylenko.github.io/Pokedex
 
 # Getting Started with Pokedex
 
@@ -23,6 +27,6 @@ Then, to start the web server, run:
 
 ### `nnpm start`
 
-The application opens in http://localhost:3000/ or any other available port.\
+The application opens in http://localhost:3000/ or any other available port.
 
 
