@@ -18,7 +18,7 @@ In the project directory, you need:
 
 Clone this repo
 
-### `git clone https://github.com/LenDoc/Pokedex`
+### `git clone https://github.com/LenaKyrylenko/Pokedex`
 Install all libraries, run:
 
 ### `npm install`
